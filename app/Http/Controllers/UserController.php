@@ -72,7 +72,7 @@ class UserController extends Controller {
 
         // Validate signup form data
         $this->validate($request, [
-            'username' => 'required',
+            'username' => 'required | regex :/(^[A-Za-z0-9]+$)+/',
             'password' => 'required',
             'email' => 'required|email'
         ]);

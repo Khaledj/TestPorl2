@@ -36,7 +36,7 @@ class UserHelper {
     }
 
     public static function checkCredentials($username, $password) {
-        $username = preg_replace("/[^A-Za-z0-9?!\-]/",'',$username);
+        $username = preg_replace("/[^A-Za-z0-9]/",'',$username);
         $user = User::where('active', 1)
             ->where('username', $username)
             ->first();
